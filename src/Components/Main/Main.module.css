@@ -1,0 +1,21 @@
+.main {
+    background-color: #eed7ba;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    justify-content: space-between;
+}
+
+.info {
+    width: 400px;
+    background-color: #f9ffe1;
+}
+
+.photo{
+    width: 400px;
+    height: 600px;
+    background-color: #dac9ff;
+}

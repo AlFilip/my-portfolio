@@ -1,0 +1,24 @@
+.sectionSkills {
+    background-color: #fff4f7;
+    padding: 3rem 0;
+}
+
+.container {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 1.5rem;
+    background-color: gold;
+}
+
+.skillsItems {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #d5e0ff;
+}

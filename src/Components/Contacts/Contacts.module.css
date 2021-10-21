@@ -1,0 +1,20 @@
+.contacts{
+    padding: 3rem 0;
+}
+
+.container{
+    margin: 0 auto;
+    flex-direction: column;
+    width: 80%;
+}
+
+.title{
+    background-color: orange;
+}
+
+.messageForm {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 60%;
+}
