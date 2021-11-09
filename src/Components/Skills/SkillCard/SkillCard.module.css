@@ -1,13 +1,14 @@
 .skillsItemCard {
     border: 1px solid;
     background-color: #e9efff;
-    min-width: 200px;
-    width: 33%;
+    max-width: 400px;
+    width: 100%;
     min-height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 .icon {
@@ -20,9 +21,10 @@
 }
 
 .name {
-
+    background-color: #cea7a7;
 }
 
 .text {
     font-size: 1.3rem;
+    background-color: #eed7ba;
 }

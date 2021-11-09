@@ -10,12 +10,11 @@ export const Contacts = () => {
                 <form className={s.messageForm} action="">
                     <input type="text" placeholder='Your name'/>
                     <input type="text" placeholder='Your contacts'/>
-                    <textArea placeholder='Your message'/>
+                    <textarea placeholder='Your message'/>
                     <div>
                         <button>Send</button>
                     </div>
                 </form>
             </div>
         </div>
-    )
-}
+    )}

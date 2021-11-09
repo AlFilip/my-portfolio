@@ -1,4 +1,5 @@
 .footer {
+    background-color: #f9ffe1;
 }
 
 .container {
@@ -7,12 +8,14 @@
 }
 
 .name {
+    background-color: #cea7a7;
 }
 
 .links {
     display: flex;
     justify-content: space-between;
     width: 50%;
+    background-color: #eed7ba;
 }
 
 .links a {
@@ -22,4 +25,5 @@
 }
 
 .copyRights {
+    background-color: #dac9ff;
 }
