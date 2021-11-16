@@ -1,0 +1,41 @@
+@import "../../common/style/sass/variables";
+@import "../../common/style/sass/mixins";
+
+.main {
+  background-color: $bgColor;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+
+  .container {
+    justify-content: space-between;
+
+    .info {
+      border: 1px solid white;
+      width: 580px;
+
+      .mainTitle {
+        h1 {
+          @include text(52px, white, 600, 1.15);
+          @media screen and (max-height: 581px) {
+            font-size: 40px;
+          }
+          @media screen and (max-width: 400px) {
+            font-size: 32px;
+            line-height: 1.25em;
+          }
+
+          span {
+            color: $secondaryColor;
+          }
+        }
+      }
+    }
+    .photo {
+      width: 300px;
+      height: 400px;
+      background-color: #18161d;
+      border: 1px solid white;
+    }
+  }
+}

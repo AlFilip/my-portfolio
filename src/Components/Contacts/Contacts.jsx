@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Contacts.module.css'
+import s from './Contacts.module.scss'
 import containerStyles from '../styles/container.module.css'
 
 export const Contacts = () => {
@@ -12,7 +12,7 @@ export const Contacts = () => {
                     <input type="text" placeholder='Your contacts'/>
                     <textarea placeholder='Your message'/>
                     <div>
-                        <button>Send</button>
+                        <button>Send message</button>
                     </div>
                 </form>
             </div>

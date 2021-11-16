@@ -1,10 +1,18 @@
-import s from '../Projects/Projects.module.css'
+import s from './Projects.module.scss'
 import containerStyles from "../styles/container.module.css";
 import React from "react";
 import {ProjectCard} from "./Project/ProjectCard";
+import photo1 from '../../assets/images/photo1.jfif'
+import photo2 from '../../assets/images/photo2.jpeg'
 
 
 export const Projects = () => {
+    const socialStyle = {
+        backgroundImage: `url(${photo1})`
+    }
+    const todoStyle = {
+        backgroundImage: `url(${photo2})`
+    }
     return (
         <div className={s.sectionProjects}>
             <div className={containerStyles.container + ' ' + s.container}>
@@ -12,9 +20,9 @@ export const Projects = () => {
                     Projects
                 </div>
                 <div className={s.projectsItems}>
-                    <ProjectCard title={'Social Network'}
+                    <ProjectCard style={socialStyle} title={'Social Network'}
                                  description={'JavaScript development'}/>
-                    <ProjectCard title={'Todo list'}
+                    <ProjectCard style={todoStyle} title={'Todo list'}
                                  description={'Lorem'}/>
                 </div>
             </div>

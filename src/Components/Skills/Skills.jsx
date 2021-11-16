@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Skills.module.css'
+import s from './Skills.module.scss'
 import containerStyles from '../styles/container.module.css'
 import {SkillCard} from "./SkillCard/SkillCard";
 
@@ -8,9 +8,9 @@ export const Skills = () => {
     return (
         <div className={s.sectionSkills}>
             <div className={containerStyles.container + ' ' + s.container}>
-                <div className={s.title}>
+                <h2 className={s.title}>
                     Skills
-                </div>
+                </h2>
                 <div className={s.skillsItems}>
                     <SkillCard title={'JS'}
                                description={'JavaScript development'}/>

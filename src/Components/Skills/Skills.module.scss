@@ -1,0 +1,31 @@
+@import "../../common/style/sass/mixins";
+@import "../../common/style/sass/variables";
+
+
+.sectionSkills {
+    background-color: #101010;
+    padding: 3rem 0;
+    min-height: 100vh;
+
+    .container {
+        flex-direction: column;
+        @include flexCenter();
+        margin: 0 auto;
+        height: 100%;
+
+        .title {
+            align-self: flex-start;
+            margin: 0 0 35px 35px;
+            @include text(24px, white, 600);
+        }
+
+        .skillsItems {
+            @include flexCenter();
+            justify-content: space-around;
+            flex-flow: row wrap;
+        }
+
+    }
+}
+
+

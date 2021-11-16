@@ -1,5 +1,5 @@
 import React from "react";
-import s from './Main.module.css'
+import s from './Main.module.scss'
 import containerStyles from '../styles/container.module.css'
 
 export const Main = () => {
@@ -7,13 +7,10 @@ export const Main = () => {
         <div className={s.main}>
             <div className={containerStyles.container + ' ' + s.container}>
                 <div className={s.info}>
-                    <h1 className="h-title">
-                        Hello, I’m <strong>Aleksey Filippov</strong>, React Developer
-                    </h1>
-                    <div className="h-subtitle typing-subtitle">
-                        <p>I code cool <strong>websites</strong></p>
-                        {/*<p>I develop <strong>mobile apps</strong></p>*/}
-                        {/*<p>I love <strong>wordpress</strong></p>*/}
+                    <div className={s.mainTitle}>
+                        <h1>
+                            Hello! I’m<br/> <span>Aleksey Filippov</span>,<br/> React Developer.
+                        </h1>
                     </div>
                 </div>
                 <div className={s.photo}>

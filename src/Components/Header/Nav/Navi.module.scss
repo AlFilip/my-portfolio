@@ -1,0 +1,22 @@
+@import "../../../common/style/sass/mixins";
+@import "../../../common/style/sass/variables";
+
+
+.nav {
+  width: 20rem;
+  display: flex;
+  justify-content: space-between;
+  justify-self: flex-end;
+
+  .link {
+    @include text();
+    text-decoration: none;
+    .linkMask {
+
+    }
+
+    .linkMaskHovered {
+
+    }
+  }
+}

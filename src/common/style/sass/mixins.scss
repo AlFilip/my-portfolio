@@ -1,0 +1,35 @@
+@import "./variables";
+
+@mixin text( $fontSize:16px, $color: white, $fontWeight:400, $lineHeight:1 ) {
+  font-size: $fontSize;
+  color: $color;
+  font-weight: $fontWeight;
+  line-height: $lineHeight;
+  font-family: $fontFamily;
+}
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin pageTitle() {
+  align-self: flex-start;
+  margin: 0 0 35px 35px;
+  @include text(24px, white, 600);
+}
+
+@mixin btn() {
+  @include text($fontWeight: 500, $lineHeight: 40px);
+  padding: 0 20px;
+  background: $bgColor;
+  border: 2px solid $secondaryColor;
+  height: 44px;
+  transition: ease-in-out 0.8s;
+  &:hover {
+    color: black;
+    background-color: $secondaryColor;
+    transition: ease-in-out 0.3s;
+  }
+}
