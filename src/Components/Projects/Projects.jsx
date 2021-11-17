@@ -1,5 +1,5 @@
 import s from './Projects.module.scss'
-import containerStyles from "../styles/container.module.css";
+import containerStyles from "../styles/container.module.scss";
 import React from "react";
 import {ProjectCard} from "./Project/ProjectCard";
 import photo1 from '../../assets/images/photo1.jfif'

@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './Footer.module.css'
-import containerStyles from "../styles/container.module.css";
+import containerStyles from "../styles/container.module.scss";
 
 export const Footer = () => {
     return (

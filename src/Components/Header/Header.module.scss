@@ -2,15 +2,24 @@
 @import "../../common/style/sass/mixins";
 
 .header {
-  height: 5rem;
   @include flexCenter();
-  background-color: $bgColor;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 50px 0 0;
+  &.withBackground{
+    background-color: $bgColor;
+  }
 
   .container {
     display: flex;
-    justify-content: flex-end;
 
     a {
+      @media screen and (max-width: 400px) {
+        display: none;
+      }
     }
   }
 }

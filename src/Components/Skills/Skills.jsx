@@ -1,6 +1,6 @@
 import React from "react";
 import s from './Skills.module.scss'
-import containerStyles from '../styles/container.module.css'
+import containerStyles from '../styles/container.module.scss'
 import {SkillCard} from "./SkillCard/SkillCard";
 
 

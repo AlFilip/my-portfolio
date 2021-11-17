@@ -1,0 +1,25 @@
+@import "../../../common/style/sass/variables";
+@import "../../../common/style/sass/mixins";
+
+.link {
+  overflow: hidden;
+
+  a {
+    display: flex;
+    flex-direction: column;
+    height: 2em;
+    @include text($fontWeight: 600, $lineHeight: 2);
+    text-decoration: none;
+    transition: ease-in-out 1s;
+
+    &:hover {
+      transform: translateY(-2em);
+      transition: ease-in-out 0.5s;
+    }
+
+    span.linkMask {
+      opacity: 0.7;
+    }
+  }
+
+}

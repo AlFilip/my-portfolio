@@ -1,10 +1,14 @@
 import React from "react";
 import s from './Main.module.scss'
-import containerStyles from '../styles/container.module.css'
+import containerStyles from '../styles/container.module.scss'
+import background from '../../assets/images/mainBackground.jpg'
 
 export const Main = () => {
+    const mainStyles = {
+        backgroundImage: `url(${background})`
+    }
     return (
-        <div className={s.main}>
+        <div className={s.main} style={mainStyles}>
             <div className={containerStyles.container + ' ' + s.container}>
                 <div className={s.info}>
                     <div className={s.mainTitle}>
@@ -12,9 +16,6 @@ export const Main = () => {
                             Hello! I’m<br/> <span>Aleksey Filippov</span>,<br/> React Developer.
                         </h1>
                     </div>
-                </div>
-                <div className={s.photo}>
-                    photo
                 </div>
             </div>
         </div>

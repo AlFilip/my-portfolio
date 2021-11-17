@@ -1,0 +1,17 @@
+.container {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border: 1px solid black;
+    @media screen and (max-width:1469px) {
+        width: 80%;
+    }
+    @media screen and (max-width:1103px) {
+        width: 90%;
+    }
+    @media screen and (max-width:600px) {
+        width: 100%;
+    }
+}

@@ -3,16 +3,28 @@
 
 .main {
   background-color: $bgColor;
+  background-size: cover;
+  background-position: 50% 50%;
+  @media screen and (max-width: 1169px) {
+    background-position: 80% 50%;
+  }
+  @media screen and (max-width: 803px) {
+    background-position: 80% 50%;
+  }
   height: 100vh;
   display: flex;
   justify-content: center;
+  z-index: 11;
 
   .container {
-    justify-content: space-between;
 
+    @media screen and (max-width: 900px) {
+      justify-content: center;
+      align-items: flex-end;
+      padding-bottom: 10%;
+    }
     .info {
       border: 1px solid white;
-      width: 580px;
 
       .mainTitle {
         h1 {
@@ -30,12 +42,8 @@
           }
         }
       }
+
     }
-    .photo {
-      width: 300px;
-      height: 400px;
-      background-color: #18161d;
-      border: 1px solid white;
-    }
+
   }
 }
