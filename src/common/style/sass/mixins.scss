@@ -20,16 +20,16 @@
   @include text(24px, white, 600);
 }
 
-@mixin btn() {
+@mixin btn($textColor: black, $hoverColor: $secondaryColor, $borderColor: $secondaryColor) {
   @include text($fontWeight: 500, $lineHeight: 40px);
   padding: 0 20px;
-  background: $bgColor;
-  border: 2px solid $secondaryColor;
+  background-color: rgba(16,16,16, 0.7);
+  border: 2px solid $borderColor;
   height: 44px;
   transition: ease-in-out 0.8s;
   &:hover {
-    color: black;
-    background-color: $secondaryColor;
+    color: $textColor;
+    background-color: $hoverColor;
     transition: ease-in-out 0.3s;
   }
 }

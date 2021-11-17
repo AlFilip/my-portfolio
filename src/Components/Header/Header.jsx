@@ -13,7 +13,7 @@ export const Header = () => {
         }
     },[]);
 
-    const headerClassName = `${s.header} ${offset > 860 && s.withBackground}`
+    const headerClassName = `${s.header} ${offset > 960 && s.withBackground}`
 
 
     return (

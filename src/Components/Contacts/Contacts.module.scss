@@ -2,7 +2,7 @@
 @import "../../common/style/sass/mixins";
 
 .contacts {
-  padding: 3rem 0;
+  padding: 70px 0;
   height: 100vh;
   background-color: $bgColor;
 
@@ -12,6 +12,7 @@
     height: 100%;
     @include flexCenter();
     flex-direction: column;
+    justify-content: center;
     flex-wrap: nowrap;
 
     .title {
