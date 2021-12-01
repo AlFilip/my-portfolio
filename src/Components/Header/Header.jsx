@@ -5,22 +5,30 @@ import {Nav} from "./Nav/Nav";
 
 export const Header = () => {
 
+    const [screenHeight, setScreenHeight] = useState(0);
     const [offset, setOffset] = useState(0);
+
 
     useEffect(() => {
         window.onscroll = () => {
             setOffset(window.pageYOffset)
         }
-    },[]);
+        setScreenHeight(window.innerHeight)
 
-    const headerClassName = `${s.header} ${offset > 960 && s.withBackground}`
+        window.onresize = () => {
+            setScreenHeight(window.innerHeight)
+            console.log(window.innerHeight)
+        }
+    }, []);
+
+    const headerClassName = `${s.header} ${offset > screenHeight && s.withBackground}`
 
 
     return (
-        <div className={headerClassName}>
+        <header className={headerClassName}>
             <div className={containerStyles.container + ' ' + s.container}>
                 <Nav/>
             </div>
-        </div>
+        </header>
     )
 }

@@ -12,8 +12,7 @@ export const Skills = () => {
                     Skills
                 </h2>
                 <div className={s.skillsItems}>
-                    <SkillCard title={'JS'}
-                               description={'JavaScript development'}/>
+                    <SkillCard title={'JS'} description={'JavaScript development'}/>
                     <SkillCard title={'Typescript'}
                                description={'Lorem'}/>
                     <SkillCard title={'React'}

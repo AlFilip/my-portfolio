@@ -1,0 +1,91 @@
+@import "../../common/style/sass/variables";
+@import "../../common/style/sass/mixins";
+
+.footer {
+  background-color: #101010;
+  position: fixed;
+  padding: 0;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
+  width: auto;
+  height: 1px;
+  z-index: 100;
+  @media screen and (max-width: 1469px) {
+    left: 20px;
+    right: 20px;
+  }
+  @media screen and (max-width: 1200px) {
+    left: 10px;
+    right: 10px;
+  }
+  @media screen and (max-width: 1103px) {
+    height: auto;
+    position: static;
+    @include flexCenter();
+    flex-direction: column;
+  }
+
+  .info {
+    @include flexCenter();
+    flex-direction: column;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    @media screen and (max-width: 1103px) {
+      position: static;
+    }
+
+    & a {
+      @include text(14px, $gray, 400, 2);
+      text-decoration: none;
+      &:hover{
+        color: $lightGray;
+        transition: ease-in 0.3s;
+      }
+    }
+  }
+
+  .links {
+    padding-right: 75px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    white-space: nowrap;
+    transform-origin: 100% 0;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    width: 24px;
+    @media screen and (max-width: 1103px) {
+      position: static;
+      transform: none;
+      padding: 0;
+      width: auto;
+      @include flexCenter();
+    }
+
+    a {
+      @include text(20px, $gray);
+
+      &:hover {
+        color: $lightGray;
+        transition: ease-in 0.3s;
+      }
+
+      margin-right: 20px;
+      @media screen and (max-width: 1103px) {
+        margin: 20px 40px;
+        //padding: 20px;
+      }
+
+      svg {
+        transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        @media screen and (max-width: 1103px) {
+          transform: none;
+          margin: 0;
+        }
+      }
+    }
+  }
+}

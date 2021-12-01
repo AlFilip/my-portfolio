@@ -1,12 +1,13 @@
 import s from './SkillCard.module.scss';
 import React from "react";
 
-export const SkillCard = (props) => {
+export const SkillCard = ({title, description, icon}) => {
+    debugger
     return (
         <div className={s.skillsItemCard}>
-            <div className={s.icon}>icon</div>
-            <h3 className={s.name}>{props.title}</h3>
-            <span className={s.text}>{props.description}</span>
+            <div className={s.icon}>{icon ? icon : 'icon'}</div>
+            <h3 className={s.name}>{title}</h3>
+            <span className={s.text}>{description}</span>
         </div>
     )
 }
