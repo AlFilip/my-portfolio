@@ -17,7 +17,6 @@
   .icon {
     width: 60px;
     height: 60px;
-    background-color: #474747;
     @include flexCenter();
     @include text(24px, $secondaryColor);
   }

@@ -3,6 +3,12 @@ import s from './Skills.module.scss'
 import containerStyles from '../styles/container.module.scss'
 import {SkillCard} from "./SkillCard/SkillCard";
 
+import typescriptImg from '../../assets/images/TypeScript.svg'
+import js from '../../assets/images/js-brands.svg'
+import react from '../../assets/images/react-brands.svg'
+import redux from '../../assets/images/redux.svg'
+import materialUI from '../../assets/images/material-ui.svg'
+
 
 export const Skills = () => {
     return (
@@ -12,18 +18,18 @@ export const Skills = () => {
                     Skills
                 </h2>
                 <div className={s.skillsItems}>
-                    <SkillCard title={'JS'} description={'JavaScript development'}/>
-                    <SkillCard title={'Typescript'}
-                               description={'Lorem'}/>
+                    <SkillCard title={'JS'} description={'JavaScript development'} icon={js}/>
+                    <SkillCard title={'Typescript'} description={'Lorem'} icon={typescriptImg}/>
                     <SkillCard title={'React'}
                                description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'}/>
+                               '                marketing.'}
+                    icon={react}/>
                     <SkillCard title={'Redux'}
                                description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'}/>
+                               '                marketing.'} icon={redux}/>
                     <SkillCard title={'Material UI'}
                                description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'}/>
+                               '                marketing.'} icon={materialUI}/>
                 </div>
             </div>
         </div>
