@@ -12,7 +12,7 @@ import materialUI from '../../assets/images/material-ui.svg'
 
 export const Skills = () => {
     return (
-        <div className={s.sectionSkills}>
+        <div className={s.sectionSkills} id='skills'>
             <div className={containerStyles.container + ' ' + s.container}>
                 <h2 className={s.title}>
                     Skills
@@ -22,8 +22,18 @@ export const Skills = () => {
                     <SkillCard title={'Typescript'} description={'Lorem'} icon={typescriptImg}/>
                     <SkillCard title={'React'}
                                description={'Modern and mobile-ready website that will help you reach all of your\n' +
+                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
                                '                marketing.'}
                     icon={react}/>
+                    <SkillCard title={'Redux'}
+                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
+                               '                marketing.'} icon={redux}/>
+                    <SkillCard title={'Redux'}
+                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
+                               '                marketing.'} icon={redux}/>
                     <SkillCard title={'Redux'}
                                description={'Modern and mobile-ready website that will help you reach all of your\n' +
                                '                marketing.'} icon={redux}/>

@@ -8,15 +8,15 @@
   min-height: 200px;
   @include flexCenter();
   flex-direction: column;
-  margin-right: -1px;
+  margin: 30px -1px 0  0;
   padding: 35px;
   font-size: 16px;
   background: #101010;
   border: 1px solid rgba(255, 255, 255, .07);
 
   .icon {
-    width: 60px;
-    height: 60px;
+    width: 43px;
+    height: 43px;
     @include flexCenter();
     @include text(24px, $secondaryColor);
   }
@@ -24,8 +24,11 @@
   .name {
     margin: 15px 0;
     @include text(16px, $lightGray, 500);
+    box-sizing: border-box;
   }
 
   .text {
+    @include text(16px, $gray, 400, 1.5);
+    text-align: center;
   }
 }

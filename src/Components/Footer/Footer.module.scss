@@ -32,14 +32,20 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    text-align: center;
+    @media screen and (max-width: 1469px) {
+      display: none;
+    }
     @media screen and (max-width: 1103px) {
+      display: block;
       position: static;
     }
 
     & a {
       @include text(14px, $gray, 400, 2);
       text-decoration: none;
-      &:hover{
+
+      &:hover {
         color: $lightGray;
         transition: ease-in 0.3s;
       }
@@ -66,6 +72,9 @@
 
     a {
       @include text(20px, $gray);
+      @media screen and (max-width: 1103px) {
+        font-size: 25px;
+      }
 
       &:hover {
         color: $lightGray;

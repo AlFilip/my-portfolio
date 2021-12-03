@@ -14,7 +14,7 @@ export const Projects = () => {
         backgroundImage: `url(${photo2})`
     }
     return (
-        <div className={s.sectionProjects}>
+        <div className={s.sectionProjects} id='projects'>
             <div className={containerStyles.container + ' ' + s.container}>
                 <div className={s.title}>
                     Projects

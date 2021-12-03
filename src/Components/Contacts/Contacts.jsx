@@ -4,7 +4,7 @@ import containerStyles from '../styles/container.module.scss'
 
 export const Contacts = () => {
     return (
-        <div className={s.contacts}>
+        <div className={s.contacts} id='contacts'>
             <div className={containerStyles.container + ' ' + s.container}>
                 <h3 className={s.title}>Contacts</h3>
                 <form className={s.messageForm} action="">

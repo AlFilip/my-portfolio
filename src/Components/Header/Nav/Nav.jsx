@@ -2,13 +2,22 @@ import React from "react";
 import s from './Navi.module.scss'
 import {Link} from "../../../common/Components/Link/Link";
 
-export const Nav = () => {
+export const Nav = ({callback, isOpen}) => {
+
+
+    const linksClassname = `${s.links} ${isOpen ? '' : s.hidden}`
+
     return (
         <div className={s.nav}>
-            <Link name={'Main'} url={''}/>
-            <Link name={'Skills'} url={''}/>
-            <Link name={'Projects'} url={''}/>
-            <Link name={'Contacts'} url={''}/>
+            <button className={s.openBtn} onClick={callback}>open</button>
+            <div className={linksClassname} onClick={callback}>
+                <Link name={'Main'} url={'#main'}/>
+                <Link name={'Skills'} url={'#skills'}/>
+                <Link name={'Projects'} url={'#projects'}/>
+                <Link name={'Contacts'} url={'#contacts'}/>
+            </div>
         </div>
     )
 }
+
+//              + ' ' + s.hidden

@@ -7,7 +7,7 @@ export const ProjectCard = (props) => {
             <div className={s.photo} style={props.style}>
                 <button>Click to watch</button>
             </div>
-            <h2 className={s.name}>{props.title}</h2>
+            <div className={s.name}>{props.title}</div>
             <span className={s.text}>{props.description}</span>
         </div>
     )

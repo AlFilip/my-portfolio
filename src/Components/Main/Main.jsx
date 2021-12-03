@@ -8,7 +8,7 @@ export const Main = () => {
         backgroundImage: `url(${background})`
     }
     return (
-        <div className={s.main} style={mainStyles}>
+        <div className={s.main} style={mainStyles} id='main'>
             <div className={containerStyles.container + ' ' + s.container}>
                 <div className={s.info}>
                     <div className={s.mainTitle}>

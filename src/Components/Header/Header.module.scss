@@ -9,17 +9,25 @@
   width: 100%;
   z-index: 100;
   padding: 50px 0 0;
-  &.withBackground{
+
+  &.withBackground {
     background-color: $bgColor;
+    transition: ease-in-out 0.5s;
+    @media screen and (max-width: 400px) {
+      background: none;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    padding-bottom: 20px;
+    &.open {
+      height: 50vh;
+      background-color: $bgColor;
+      transition: ease-in-out 0.3s;
+    }
   }
 
   .container {
-    display: flex;
-
-    a {
-      @media screen and (max-width: 400px) {
-        display: none;
-      }
-    }
+    display: block;
   }
 }

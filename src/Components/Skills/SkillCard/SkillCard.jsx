@@ -2,7 +2,6 @@ import s from './SkillCard.module.scss';
 import React from "react";
 
 export const SkillCard = ({title, description, icon}) => {
-    debugger
     return (
         <div className={s.skillsItemCard}>
             <div className={s.icon}>{icon ? <img src={icon} alt='icon'/> : 'icon'}</div>
