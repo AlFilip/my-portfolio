@@ -24,6 +24,8 @@ export const Projects = () => {
                                  description={'JavaScript development'}/>
                     <ProjectCard style={todoStyle} title={'Todo list'}
                                  description={'Lorem'}/>
+                    <ProjectCard style={todoStyle} title={'Todo list'}
+                                 description={'Lorem'}/>
                 </div>
             </div>
         </div>

@@ -3,6 +3,9 @@ import s from './Header.module.scss'
 import containerStyles from '../styles/container.module.scss'
 import {Nav} from "./Nav/Nav";
 
+
+// Реализовать логику управления состоянием в компоненте. Учесть поворот экрана. минимум мусора в сыы!!!!!!!!!!!!!!!!!!
+
 export const Header = () => {
 
     const [screenHeight, setScreenHeight] = useState(0);

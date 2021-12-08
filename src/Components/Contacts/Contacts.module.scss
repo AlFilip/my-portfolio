@@ -3,8 +3,11 @@
 
 .contacts {
   padding: 70px 0;
-  height: 100vh;
+  min-height: 80vh;
   background-color: $bgColor;
+  @media screen and (max-width: 600px) {
+    padding: 30px 0;
+  }
 
   .container {
     padding: 0 20px;
@@ -14,6 +17,9 @@
     flex-direction: column;
     justify-content: center;
     flex-wrap: nowrap;
+    @media screen and (max-width: 600px) {
+      padding: 0;
+    }
 
     .title {
       @include pageTitle();

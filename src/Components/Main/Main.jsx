@@ -13,7 +13,7 @@ export const Main = () => {
                 <div className={s.info}>
                     <div className={s.mainTitle}>
                         <h1>
-                            Hello! I’m<br/> <span>Aleksey Filippov</span>,<br/> React Developer.
+                            Hello! I’m<br/> <span>Aleksey Filippov</span>,<br/> Frontend Developer.
                         </h1>
                     </div>
                 </div>

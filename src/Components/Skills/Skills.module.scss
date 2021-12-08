@@ -6,6 +6,9 @@
     background-color: #101010;
     padding: 140px 0 70px;
     min-height: 100vh;
+    @media screen and (max-width: 600px) {
+        padding: 30px 0;
+    }
 
     .container {
         @include flexCenter();
