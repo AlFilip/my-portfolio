@@ -23,7 +23,6 @@
     .projectsItems {
       width: 100%;
       @include flexCenter();
-      justify-content: space-around;
       flex-flow: row wrap;
     }
   }

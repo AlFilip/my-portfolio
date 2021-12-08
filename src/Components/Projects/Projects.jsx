@@ -26,6 +26,10 @@ export const Projects = () => {
                                  description={'Lorem'}/>
                     <ProjectCard style={todoStyle} title={'Todo list'}
                                  description={'Lorem'}/>
+                    <ProjectCard style={todoStyle} title={'Todo list'}
+                                 description={'Lorem'}/>
+                    <ProjectCard style={todoStyle} title={'Todo list'}
+                                 description={'Lorem'}/>
                 </div>
             </div>
         </div>
