@@ -2,11 +2,11 @@
 @import "../../common/style/sass/mixins";
 
 .contacts {
-  padding: 70px 0;
+  padding: 140px 0 70px;
   //min-height: 80vh;
   background-color: $bgColor;
   @media screen and (max-width: 600px) {
-    padding: 30px 0;
+    padding: 30px 0 0;
   }
 
   .container {
