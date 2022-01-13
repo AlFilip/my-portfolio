@@ -23,9 +23,8 @@
       align-items: flex-end;
       padding-bottom: 10%;
     }
-    .info {
-      border: 1px solid white;
 
+    .info {
       .mainTitle {
         h1 {
           @include text(52px, white, 600, 1.15);

@@ -1,6 +1,7 @@
 import React from "react";
 import s from './Contacts.module.scss'
 import containerStyles from '../styles/container.module.scss'
+import {AnimatedButton} from '../../common/Components/AnimatedButton/AnimatedButton';
 
 export const Contacts = () => {
     return (
@@ -12,7 +13,7 @@ export const Contacts = () => {
                     <input type="text" placeholder='Your contacts'/>
                     <textarea placeholder='Your message'/>
                     <div>
-                        <button>Send message</button>
+                        <AnimatedButton text={'Send message'}/>
                     </div>
                 </form>
             </div>

@@ -2,7 +2,7 @@
 
 
 .projectItemCard {
-  border: 1px solid white;
+  border: 1px solid rgba(255, 255, 255, .07);
 
   width: 50%;
   padding: 25px;
@@ -24,39 +24,55 @@
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
+    overflow: hidden;
 
-    &::before {
+
+    .circle {
       position: absolute;
-      content: '';
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background-color: rgba(16, 16, 16, 0.6);
-      transition: ease-in-out 1s;
+      content: "";
+      z-index: 0;
+      width: 0;
+      height: 0;
+      border-radius: 100%;
+      background: $secondaryColor;
+      transform: translate(-50%, -50%);
+      transition: width 1s, padding-top 1s;
     }
 
-    &:hover {
-      &::before {
-        background-color: rgba(16, 16, 16, 0.1);
-        transition: ease-in-out 0.4s;
+    .descWrapper {
+      position: absolute;
+      top: -300px;
+      transition: ease 1s;
+
+      .description {
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 100px;
+
+        .name {
+          @include text(16px, $bgColor, 500, 1.5)
+        }
+
+        .text {
+          @include text(16px, $bgColor, 400, 1.5)
+        }
       }
+
+      &:hover .description {
+        margin: 0;
+      }
+
+    }
+    &:hover .descWrapper{
+      top: 0;
     }
 
-    button {
-      @include btn();
-      z-index: 1;
+    &:hover .circle {
+      width: calc(100% * 3);
+      padding-top: calc(100% * 3);
     }
-
   }
 
-  .name {
-    margin: 30px 0 5px;
-    @include text(16px, $lightGray, 500, 1.5)
-  }
-
-  .text {
-    margin: 0 0 5px;
-    @include text(16px, $darkGray, 400, 1.5)
-  }
 }

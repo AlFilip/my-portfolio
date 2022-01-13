@@ -22,13 +22,13 @@ export const Projects = () => {
                 <div className={s.projectsItems}>
                     <ProjectCard style={socialStyle} title={'Social Network'}
                                  description={'JavaScript development'}/>
-                    <ProjectCard style={todoStyle} title={'Todo list'}
+                    <ProjectCard style={todoStyle} title={'Todo list1'}
                                  description={'Lorem'}/>
-                    <ProjectCard style={todoStyle} title={'Todo list'}
+                    <ProjectCard style={todoStyle} title={'Todo list2'}
                                  description={'Lorem'}/>
-                    <ProjectCard style={todoStyle} title={'Todo list'}
+                    <ProjectCard style={todoStyle} title={'Todo list3'}
                                  description={'Lorem'}/>
-                    <ProjectCard style={todoStyle} title={'Todo list'}
+                    <ProjectCard style={todoStyle} title={'Todo list4'}
                                  description={'Lorem'}/>
                 </div>
             </div>

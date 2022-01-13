@@ -69,10 +69,6 @@
       div {
         align-self: flex-start;
 
-        button {
-          @include btn();
-
-        }
       }
     }
   }

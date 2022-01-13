@@ -1,0 +1,48 @@
+@import 'src/common/style/sass/variables';
+@import 'src/common/style/sass/mixins';
+
+.btn {
+  --time: 1s;
+
+  position: relative;
+  height: 44px;
+  padding: 0 20px;
+
+  background: $bgColor;
+  border: 2px solid $secondaryColor;
+  @include text($fontWeight: 500, $lineHeight: 40px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .text {
+    position: relative;
+    z-index: 5;
+    transition: color var(--time);
+  }
+
+  &:hover .text {
+    color: $bgColor;
+  }
+
+  .circle {
+    position: absolute;
+    content: "";
+    z-index: 0;
+    width: 0;
+    height: 0;
+    border-radius: 100%;
+    background: $secondaryColor;
+    transform: translate(-50%, -50%);
+    transition: width var(--time), padding-top var(--time);
+  }
+
+  &:hover .circle {
+    width: calc(100% * 2.25);
+    padding-top: calc(100% * 2.25);
+  }
+}
+
+
