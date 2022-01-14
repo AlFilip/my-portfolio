@@ -1,22 +1,33 @@
 import React from 'react';
 import s from './AnimatedButton.module.scss'
+import {circleAnimate} from '../../../utils/helpers';
 
 
 export const AnimatedButton = ({
-                                   text='hover me',
+                                   text = 'hover me',
                                    callback,
                                }) => {
 
-
-    const mouseOverHandle = (e) => {
-        const circle = document.querySelector(`.${s.circle}`)
-        const element = e.currentTarget
-        circle.style.left = e.pageX - element.offsetLeft + 'px'
-        circle.style.top = e.pageY - element.offsetTop + 'px'
+    const mouseEventsHandle = event => {
+        circleAnimate({
+            event,
+            circleSelector: `.${s.circle}`,
+        })
     }
+
+    const touchEventsHandle = event => {
+        circleAnimate({
+            event,
+            circleSelector: `.${s.circle}`,
+            isTouchEvent: true
+        })
+    }
+
     return (
         <button className={s.btn}
-                onMouseOver={mouseOverHandle}
+                onMouseEnter={mouseEventsHandle}
+                onMouseLeave={mouseEventsHandle}
+                onTouchStart={touchEventsHandle}
                 onClick={callback}
         >
             <span className={s.circle}/>
@@ -24,3 +35,5 @@ export const AnimatedButton = ({
         </button>
     )
 }
+
+

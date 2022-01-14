@@ -8,7 +8,7 @@
   top: 0;
   width: 100%;
   z-index: 100;
-  padding: 50px 0 0;
+  padding: 20px 0 20px;
 
   &.withBackground {
     background-color: $bgColor;
@@ -21,7 +21,7 @@
   @media screen and (max-width: 400px) {
     padding-bottom: 20px;
     &.open {
-      height: 50vh;
+      height: auto;
       background-color: $bgColor;
       transition: ease-in-out 0.3s;
     }

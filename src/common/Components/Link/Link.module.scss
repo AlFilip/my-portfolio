@@ -3,9 +3,10 @@
 
 .link {
   overflow: hidden;
-  //@media screen and (max-width: 400px) {
-  //  display: none;
-  //}
+  @media screen and (max-width: 400px) {
+    //padding: 2vh 0;
+    padding-top: 5vh;
+  }
 
   a {
     display: flex;

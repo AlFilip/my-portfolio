@@ -18,4 +18,5 @@ export const Contacts = () => {
                 </form>
             </div>
         </div>
-    )}
+    )
+}

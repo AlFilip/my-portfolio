@@ -1,28 +1,33 @@
 import React from "react";
 import s from './ProjectCard.module.scss'
+import {circleAnimate} from '../../../utils/helpers';
+
 
 export const ProjectCard = (props) => {
     const uniqueCircleClassName = props.title.split(' ').join('')
+    const circleSelector = `.${uniqueCircleClassName}`
 
-    const mouseOverHandle = (e) => {
-        const circle = document.querySelector(`.${uniqueCircleClassName}`)
-        const element = e.currentTarget
-        circle.style.left = e.pageX - element.offsetLeft + 'px'
-        circle.style.top = e.pageY - element.offsetTop + 'px'
-    }
-    const mouseLeaveHandle = (e) => {
-        const circle = document.querySelector(`.${uniqueCircleClassName}`)
-        const element = e.currentTarget
-        circle.style.left = e.pageX - element.offsetLeft + 'px'
-        circle.style.top = e.pageY - element.offsetTop + 'px'
+    const mouseOverHandle = event => {
+        circleAnimate({
+            event,
+            circleSelector,
+        })
     }
 
+    const touchStartHandle = event => {
+        circleAnimate({
+            circleSelector,
+            event,
+            isTouchEvent: true,
+        })
+    }
 
     return (
         <div className={s.projectItemCard}>
             <div className={s.photo} style={props.style}
                  onMouseEnter={mouseOverHandle}
-                 onMouseLeave={mouseLeaveHandle}
+                 onMouseLeave={mouseOverHandle}
+                 onTouchStart={touchStartHandle}
             >
                 <span className={s.circle + ' ' + uniqueCircleClassName}/>
                 <div className={s.descWrapper}>
