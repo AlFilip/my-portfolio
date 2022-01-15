@@ -1,24 +1,24 @@
-@import "../../../common/style/sass/mixins";
-@import "../../../common/style/sass/variables";
+@import "../../../assets/styles/mixins";
+@import "../../../assets/styles/variables";
 
 .skillsItemCard {
   font-family: 'Roboto', sans-serif;
-  max-width: 400px;
-  width: 100%;
   min-height: 200px;
   @include flexCenter();
   flex-direction: column;
-  margin: 30px -1px 0  0;
   padding: 35px;
   font-size: 16px;
   background: #101010;
   border: 1px solid rgba(255, 255, 255, .07);
+  margin-bottom: 70px;
+  @media screen and (max-width: $firstResize) {
+    margin-bottom: 35px
+  }
 
   .icon {
     width: 43px;
     height: 43px;
     @include flexCenter();
-    @include text(24px, $secondaryColor);
   }
 
   .name {

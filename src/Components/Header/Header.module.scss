@@ -1,5 +1,5 @@
-@import "../../common/style/sass/variables";
-@import "../../common/style/sass/mixins";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
 
 .header {
   @include flexCenter();
@@ -13,12 +13,12 @@
   &.withBackground {
     background-color: $bgColor;
     transition: ease-in-out 0.5s;
-    @media screen and (max-width: 400px) {
+    @media screen and (max-width: $secondResize) {
       background: none;
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: $secondResize) {
     padding-bottom: 20px;
     &.open {
       height: auto;

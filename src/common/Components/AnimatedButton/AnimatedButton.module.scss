@@ -1,5 +1,5 @@
-@import 'src/common/style/sass/variables';
-@import 'src/common/style/sass/mixins';
+@import '../../../assets/styles/variables';
+@import '../../../assets/styles/mixins';
 
 .btn {
   --time: 1s;
@@ -40,8 +40,8 @@
   }
 
   &:hover .circle {
-    width: calc(100% * 2.25);
-    padding-top: calc(100% * 2.25);
+    width: calc(100% * 3);
+    padding-top: calc(100% * 3);
   }
 }
 

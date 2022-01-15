@@ -1,34 +1,40 @@
-@import "../../common/style/sass/mixins";
-@import "../../common/style/sass/variables";
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
 
 
 .sectionSkills {
-    background-color: #101010;
-    padding: 140px 0 0;
-    min-height: 100vh;
-    @media screen and (max-width: 600px) {
-        padding: 30px 0;
-    }
+  background-color: #101010;
+  padding: 140px 0 0;
+  min-height: 100vh;
+  @media screen and (max-width: $secondResize) {
+    padding: 30px 0;
+  }
 
-    .container {
-        @include flexCenter();
-        flex-direction: column;
-        margin: 0 auto;
-        height: 100%;
+  .container {
+    @include flexCenter();
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100%;
 
-        .title {
-            align-self: flex-start;
-            margin: 0 0 35px 35px;
-            @include text(24px, white, 600);
+
+
+    .skillsItems {
+      display: -webkit-box; /* Not needed if autoprefixing */
+      display: -ms-flexbox; /* Not needed if autoprefixing */
+      display: flex;
+      width: 100%;
+      & .columns {
+        padding:  0 50px;
+        background-clip: padding-box;
+        @media screen and (max-width: $firstResize) {
+          padding: 0 15px 0;
         }
-
-        .skillsItems {
-            @include flexCenter();
-            justify-content: space-around;
-            flex-flow: row wrap;
-        }
-
+      }
     }
+  }
+
 }
+
+
 
 

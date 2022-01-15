@@ -1,11 +1,11 @@
-@import "../../common/style/sass/mixins";
-@import "../../common/style/sass/variables";
+@import "../../assets/styles/mixins";
+@import "../../assets/styles/variables";
 
 .sectionProjects {
-  padding: 140px 0 0;
+  padding: 70px 0 0;
   //min-height: 100vh;
   background-color: $bgColor;
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $secondResize) {
     padding: 30px 0;
   }
 
@@ -16,14 +16,28 @@
 
     .title {
       align-self: flex-start;
-      margin: 0 0 35px 35px;
+      margin: 0 0 35px 50px;
       @include text(24px, white, 600);
     }
 
     .projectsItems {
+      display: -webkit-box; /* Not needed if autoprefixing */
+      display: -ms-flexbox; /* Not needed if autoprefixing */
+      display: flex;
       width: 100%;
-      @include flexCenter();
-      flex-flow: row wrap;
+      & .columns {
+        padding: 0 50px;
+        background-clip: padding-box;
+        @media screen and (max-width: $firstResize){
+          padding:  0 15px;
+        }
+        & div{
+          padding-bottom: 100px;
+          @media screen and (max-width: $firstResize){
+            padding-bottom: 30px;
+          }
+        }
+      }
     }
   }
 }

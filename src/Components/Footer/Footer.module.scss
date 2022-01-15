@@ -1,5 +1,5 @@
-@import "../../common/style/sass/variables";
-@import "../../common/style/sass/mixins";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
 
 .footer {
   background-color: #101010;
@@ -10,21 +10,17 @@
   right: 50px;
   width: auto;
   z-index: 100;
-  @media screen and (max-width: 1469px) {
-    left: 20px;
-    right: 20px;
-  }
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: $firstResize) {
     left: 10px;
     right: 10px;
   }
-  @media screen and (max-width: 1103px) {
+  @media screen and (max-width: $secondResize) {
     height: auto;
     position: static;
     @include flexCenter();
     flex-direction: column;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: $secondResize) {
     padding: 30px 0 0;
   }
 
@@ -35,10 +31,10 @@
     left: 0;
     bottom: 0;
     text-align: center;
-    @media screen and (max-width: 1469px) {
+    @media screen and (max-width: $firstResize) {
       display: none;
     }
-    @media screen and (max-width: 1103px) {
+    @media screen and (max-width: $secondResize) {
       display: block;
       position: static;
     }
@@ -64,7 +60,7 @@
     transform: rotate(90deg);
     -webkit-transform: rotate(90deg);
     width: 24px;
-    @media screen and (max-width: 1103px) {
+    @media screen and (max-width: $secondResize) {
       position: static;
       transform: none;
       padding: 0;
@@ -74,7 +70,7 @@
 
     a {
       @include text(20px, $gray);
-      @media screen and (max-width: 1103px) {
+      @media screen and (max-width: $secondResize) {
         font-size: 25px;
       }
 
@@ -84,7 +80,7 @@
       }
 
       margin-right: 20px;
-      @media screen and (max-width: 1103px) {
+      @media screen and (max-width: $secondResize) {
         margin: 20px 40px;
         //padding: 20px;
       }
@@ -92,7 +88,7 @@
       svg {
         transform: rotate(270deg);
         -webkit-transform: rotate(270deg);
-        @media screen and (max-width: 1103px) {
+        @media screen and (max-width: $secondResize) {
           transform: none;
           margin: 0;
         }

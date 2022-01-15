@@ -1,0 +1,12 @@
+@import "src/assets/styles/mixins";
+
+.title {
+  align-self: flex-start;
+  padding: 0 0 35px 50px;
+  @include text(24px, white, 600);
+  @media screen and (max-width: $firstResize) {
+    padding: 0 0 15px 15px;
+  }
+
+
+}

@@ -1,14 +1,14 @@
-@import "../../common/style/sass/variables";
-@import "../../common/style/sass/mixins";
+@import "../../assets/styles/variables";
+@import "../../assets/styles/mixins";
 
 .main {
   background-color: $bgColor;
   background-size: cover;
   background-position: 50% 50%;
-  @media screen and (max-width: 1169px) {
+  @media screen and (max-width: $firstResize) {
     background-position: 80% 50%;
   }
-  @media screen and (max-width: 803px) {
+  @media screen and (max-width: $secondResize) {
     background-position: 80% 50%;
   }
   height: 100vh;
@@ -18,7 +18,7 @@
 
   .container {
 
-    @media screen and (max-width: 900px) {
+    @media screen and (max-width: $secondResize) {
       justify-content: center;
       align-items: flex-end;
       padding-bottom: 10%;
@@ -28,10 +28,10 @@
       .mainTitle {
         h1 {
           @include text(52px, white, 600, 1.15);
-          @media screen and (max-height: 581px) {
+          @media screen and (max-height: $secondResize) {
             font-size: 40px;
           }
-          @media screen and (max-width: 400px) {
+          @media screen and (max-width: $thirdResize) {
             font-size: 32px;
             line-height: 1.25em;
           }
