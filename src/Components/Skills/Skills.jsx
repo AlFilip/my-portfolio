@@ -1,8 +1,9 @@
 import React from "react";
+import {Element} from 'react-scroll';
+
 import s from './Skills.module.scss'
 import containerStyles from '../../assets/styles/container.module.scss'
 import {SkillCard} from "./SkillCard/SkillCard";
-
 import typescriptImg from '../../assets/images/TypeScript.svg'
 import js from '../../assets/images/js-brands.svg'
 import react from '../../assets/images/react-brands.svg'
@@ -10,7 +11,6 @@ import redux from '../../assets/images/redux.svg'
 import materialUI from '../../assets/images/material-ui.svg'
 import Masonry from 'react-masonry-css';
 import {SubHeader} from '../../common/Components/SubHeader/SubHeader';
-
 
 const skills = [
     {
@@ -55,7 +55,7 @@ export const Skills = () => {
     };
 
     return (
-        <div className={s.sectionSkills} id='skills'>
+        <Element name='Skills' className={s.sectionSkills}>
             <div className={containerStyles.container + ' ' + s.container}>
                 <SubHeader title={'Skills'}/>
                 <Masonry className={s.skillsItems}
@@ -73,6 +73,6 @@ export const Skills = () => {
                     }
                 </Masonry>
             </div>
-        </div>
+        </Element>
     )
 }

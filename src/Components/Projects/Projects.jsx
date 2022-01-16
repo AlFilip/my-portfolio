@@ -1,9 +1,11 @@
+import React from "react";
+import {Element} from 'react-scroll';
+import Masonry from 'react-masonry-css';
+
 import s from './Projects.module.scss'
 import containerStyles from "../../assets/styles/container.module.scss";
-import React from "react";
 import photo1 from '../../assets/images/photo1.jfif'
 import photo2 from '../../assets/images/photo2.jpeg'
-import Masonry from 'react-masonry-css';
 import {ProjectCard} from './Project/ProjectCard';
 import {SubHeader} from '../../common/Components/SubHeader/SubHeader';
 
@@ -44,7 +46,7 @@ export const Projects = () => {
     };
 
     return (
-        <div className={s.sectionProjects} id='projects'>
+        <Element name='Projects' className={s.sectionProjects}>
             <div className={containerStyles.container + ' ' + s.container}>
                 {/*<div className={s.title}>*/}
                 {/*    Projects*/}
@@ -65,7 +67,6 @@ export const Projects = () => {
                     }
                 </Masonry>
             </div>
-        </div>
-
+        </Element>
     )
 }

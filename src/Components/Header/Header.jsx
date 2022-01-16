@@ -31,7 +31,7 @@ export const Header = () => {
     const headerClassName = `${s.header} ${isOpaque && s.withBackground} ${open ? s.open : ''}`
 
     return (
-        <header className={headerClassName}>
+        <header className={headerClassName} onClick={onOpenClickHandler}>
             <div className={containerStyles.container + ' ' + s.container}>
                 <Nav callback={onOpenClickHandler} isOpen={open}/>
             </div>

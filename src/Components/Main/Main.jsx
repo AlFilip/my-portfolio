@@ -1,4 +1,6 @@
 import React from "react";
+import {Element} from 'react-scroll'
+
 import s from './Main.module.scss'
 import containerStyles from '../../assets/styles/container.module.scss'
 import background from '../../assets/images/mainBackground.jpg'
@@ -8,7 +10,7 @@ export const Main = () => {
         backgroundImage: `url(${background})`
     }
     return (
-        <div className={s.main} style={mainStyles} id='main'>
+        <Element name='Main' className={s.main} style={mainStyles}>
             <div className={containerStyles.container + ' ' + s.container}>
                 <div className={s.info}>
                     <div className={s.mainTitle}>
@@ -18,6 +20,6 @@ export const Main = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </Element>
     )
 }

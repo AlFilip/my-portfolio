@@ -2,6 +2,7 @@ import React from "react";
 import s from './Navi.module.scss'
 import {Link} from "../../../common/Components/Link/Link";
 
+
 export const Nav = ({callback, isOpen}) => {
 
 
@@ -9,16 +10,21 @@ export const Nav = ({callback, isOpen}) => {
     const iconsClassName = `${s.menuIcon} ${isOpen ? s.activeBtn : ''}`
 
     return (
-        <div className={s.nav}>
+        <div className={s.nav} onClick={callback}>
             {/*<button className={s.openBtn} onClick={callback}>open</button>*/}
-                <div className={iconsClassName} onClick={callback}>
-                    <span/>
-                </div>
+            <div className={iconsClassName}>
+                <span/>
+            </div>
             <div className={linksClassname} onClick={callback}>
-                <Link name={'Main'} url={'#main'}/>
-                <Link name={'Skills'} url={'#skills'}/>
-                <Link name={'Projects'} url={'#projects'}/>
-                <Link name={'Contacts'} url={'#contacts'}/>
+                {
+                    ['Main', 'Skills', 'Projects', 'Contacts']
+                        .map(element => (
+                            <Link key={element}
+                                  url={element}
+                                  name={element}
+                                  callback={callback}
+                            />))
+                }
             </div>
         </div>
     )
