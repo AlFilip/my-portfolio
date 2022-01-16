@@ -11,13 +11,13 @@ export const Footer = () => {
                 <div className={s.phone}><a href="tel:+79600901100">+7 (960) 090 11 00</a></div>
             </div>
             <div className={s.links}>
-                <a href="https://t.me/AlekseyNikolaevichF" target='_blank'>
+                <a href="https://t.me/AlekseyNikolaevichF" target='_blank' rel="noreferrer">
                     <FontAwesomeIcon icon={faTelegram}/>
                 </a>
-                <a href="https://github.com/AlFilip" target='_blank'>
+                <a href="https://github.com/AlFilip" target='_blank' rel="noreferrer">
                     <FontAwesomeIcon icon={faGithub}/>
                 </a>
-                <a href="https://www.linkedin.com/in/aleksey-filippov-465218226/" target='_blank'>
+                <a href="https://www.linkedin.com/in/aleksey-filippov-465218226/" target='_blank' rel="noreferrer">
                     <FontAwesomeIcon icon={faLinkedin}/>
                 </a>
             </div>

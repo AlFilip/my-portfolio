@@ -4,32 +4,31 @@ import containerStyles from '../../assets/styles/container.module.scss'
 import {Nav} from "./Nav/Nav";
 
 
-// Реализовать логику управления состоянием в компоненте. Учесть поворот экрана, galaxy fold. минимум мусора в сыы!!!!!!!!!!!!!!!!!!
-
 export const Header = () => {
-
-    const [screenHeight, setScreenHeight] = useState(0);
-    const [offset, setOffset] = useState(0);
-
+    const [isOpaque, setOpaque] = useState(false)
     const [open, setOpen] = useState(false)
     const onOpenClickHandler = () => {
         setOpen(!open)
     }
 
-
     useEffect(() => {
-        window.onscroll = () => {
-            setOffset(window.pageYOffset)
+        const scrollListener = () => {
+            if (!isOpaque && window.pageYOffset > window.innerHeight) {
+                setOpaque(true)
+            }
+            if (isOpaque && window.pageYOffset < window.innerHeight) {
+                setOpaque(false)
+            }
         }
-        setScreenHeight(window.innerHeight)
 
-        window.onresize = () => {
-            setScreenHeight(window.innerHeight)
+        window.addEventListener('scroll', scrollListener)
+
+        return () => {
+            window.removeEventListener('scroll', scrollListener)
         }
-    }, []);
+    }, [isOpaque]);
 
-    const headerClassName = `${s.header} ${offset > screenHeight && s.withBackground} ${open ? s.open: '' }`
-
+    const headerClassName = `${s.header} ${isOpaque && s.withBackground} ${open ? s.open : ''}`
 
     return (
         <header className={headerClassName}>

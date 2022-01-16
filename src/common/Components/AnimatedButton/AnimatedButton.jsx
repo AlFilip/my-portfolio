@@ -1,6 +1,6 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './AnimatedButton.module.scss'
-import {circleAnimate} from '../../../utils/helpers';
+import {getCircleSpanStyle} from '../../../utils/helpers';
 
 
 export const AnimatedButton = ({
@@ -8,19 +8,16 @@ export const AnimatedButton = ({
                                    callback,
                                }) => {
 
+    const [spanStyle, setSpanStyle] = useState({})
+
     const mouseEventsHandle = event => {
-        circleAnimate({
-            event,
-            circleSelector: `.${s.circle}`,
-        })
+        const style = getCircleSpanStyle(event)
+        setSpanStyle(style)
     }
 
     const touchEventsHandle = event => {
-        circleAnimate({
-            event,
-            circleSelector: `.${s.circle}`,
-            isTouchEvent: true
-        })
+        const style = getCircleSpanStyle(event)
+        setSpanStyle(style)
     }
 
     return (
@@ -30,7 +27,7 @@ export const AnimatedButton = ({
                 onTouchStart={touchEventsHandle}
                 onClick={callback}
         >
-            <span className={s.circle}/>
+            <span className={s.circle} style={spanStyle}/>
             <span className={s.text}>{text}</span>
         </button>
     )

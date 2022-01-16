@@ -12,6 +12,41 @@ import Masonry from 'react-masonry-css';
 import {SubHeader} from '../../common/Components/SubHeader/SubHeader';
 
 
+const skills = [
+    {
+        title: 'JS',
+        description: 'JavaScript development',
+        icon: js,
+    },
+    {
+        title: 'Typescript',
+        description: 'Loremghgyukgjhkjlkj',
+        icon: typescriptImg,
+    },
+    {
+        title: 'React',
+        description: 'Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.',
+        icon: react,
+    },
+    {
+        title: 'Redux',
+        description: 'Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.',
+        icon: redux,
+    },
+    {
+        title: 'Material UI',
+        description: 'Modern and mobile-ready website that will help you reach all of your\n' +
+            '                marketing.',
+        icon: materialUI,
+    },
+]
+
 export const Skills = () => {
 
     const breakpointColumnsObj = {
@@ -27,28 +62,15 @@ export const Skills = () => {
                          breakpointCols={breakpointColumnsObj}
                          columnClassName={s.columns}
                 >
-                    <SkillCard title={'JS'} description={'JavaScript development'} icon={js}/>
-                    <SkillCard title={'Typescript'} description={'Lorem'} icon={typescriptImg}/>
-                    <SkillCard title={'React'}
-                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'}
-                               icon={react}/>
-                    <SkillCard title={'Redux'}
-                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'} icon={redux}/>
-                    <SkillCard title={'Redux'}
-                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'} icon={redux}/>
-                    <SkillCard title={'Redux'}
-                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'} icon={redux}/>
-                    <SkillCard title={'Material UI'}
-                               description={'Modern and mobile-ready website that will help you reach all of your\n' +
-                               '                marketing.'} icon={materialUI}/>
+                    {
+                        skills.map(skill => (
+                            <SkillCard key={skill.title}
+                                       title={skill.title}
+                                       description={skill.description}
+                                       icon={skill.icon}
+                            />
+                        ))
+                    }
                 </Masonry>
             </div>
         </div>
