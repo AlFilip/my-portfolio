@@ -45,42 +45,56 @@
         padding: 35px;
         border: 1px solid rgba(255, 255, 255, .07);
 
-        input {
-          height: 50px;
-          border: none;
-          border-bottom: 1px solid rgba(255, 255, 255, .07);
-          background: none;
-          outline: none;
-          @include text(16px, $lightGray);
-          margin-bottom: 30px;
-          resize: none;
-          transition: ease-in-out 0.7s;
+        .field {
+          width: 100%;
+          position: relative;
 
-          &:focus {
-            border-bottom: 1px solid $secondaryColor;
+          input {
+            height: 50px;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+            background: none;
+            outline: none;
+            @include text(16px, $lightGray);
+            margin-bottom: 30px;
+            resize: none;
+            transition: ease-in-out 0.7s;
+
+            &:focus {
+              border-bottom: 1px solid $secondaryColor;
+            }
           }
+          .errorSpan{
+            position: absolute;
+            left: 10px;
+            bottom: 10px;
+            color: darkred;
+          }
+
+          textarea {
+            height: 120px;
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid rgba(255, 255, 255, .07);
+            background: none;
+            outline: none;
+            @include text(16px, $lightGray);
+            margin-bottom: 30px;
+            resize: none;
+            transition: ease-in-out 0.7s;
+            @media screen and (max-width: $secondResize) {
+              min-height: 15em;
+            }
+
+            &:focus {
+              border-bottom: 1px solid $secondaryColor;
+            }
+          }
+
         }
 
-        textarea {
-          height: 120px;
-          border: none;
-          border-bottom: 1px solid rgba(255, 255, 255, .07);
-          background: none;
-          outline: none;
-          @include text(16px, $lightGray);
-          margin-bottom: 30px;
-          resize: none;
-          transition: ease-in-out 0.7s;
-          @media screen and (max-width: $secondResize) {
-            min-height: 15em;
-          }
-
-          &:focus {
-            border-bottom: 1px solid $secondaryColor;
-          }
-        }
-
-        div {
+        .btn {
           align-self: flex-start;
         }
       }
