@@ -51,7 +51,7 @@ export const Contacts = ({
 
     const sendMessage = async () => {
         dispatch(setAppStatus('loading'))
-        const {messageStatus} = await postData('http://localhost:3010/send', {name, contacts, message})
+        const {messageStatus} = await postData('https://smtp-gmail.herokuapp.com/send', {name, contacts, message})
         if (messageStatus === 'OK') {
             dispatch(setPopUpMessage('Message has been sent'))
             setName('')

@@ -1,6 +1,6 @@
 
 
-export async function postData(url = 'http://localhost:3010/send', payload = {}) {
+export async function postData(url, payload) {
     try {
         const response = await fetch(url, {
             method: 'POST',
