@@ -6,6 +6,7 @@ import {getCircleSpanStyle} from '../../../utils/helpers';
 export const AnimatedButton = ({
                                    text = 'hover me',
                                    callback,
+                                   disabled
                                }) => {
 
     const [spanStyle, setSpanStyle] = useState({})
@@ -26,6 +27,7 @@ export const AnimatedButton = ({
                 onMouseLeave={mouseEventsHandle}
                 onTouchStart={touchEventsHandle}
                 onClick={callback}
+                disabled={disabled}
         >
             <span className={s.circle} style={spanStyle}/>
             <span className={s.text}>{text}</span>

@@ -60,6 +60,9 @@
             margin-bottom: 30px;
             resize: none;
             transition: ease-in-out 0.7s;
+            &.error{
+              border-bottom: 1px solid red;
+            }
 
             &:focus {
               border-bottom: 1px solid $secondaryColor;
@@ -89,6 +92,9 @@
 
             &:focus {
               border-bottom: 1px solid $secondaryColor;
+            }
+            &.error{
+              border-bottom: 1px solid red;
             }
           }
 

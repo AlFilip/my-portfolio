@@ -6,53 +6,60 @@ import containerStyles from '../../assets/styles/container.module.scss'
 import {AnimatedButton} from '../../common/Components/AnimatedButton/AnimatedButton';
 import {SubHeader} from '../../common/Components/SubHeader/SubHeader';
 import {postData} from '../../api/api';
+import {setAppStatus, setPopUpMessage} from "../../reducers/reducer";
 
 
-const processErrors = (name, contacts, message, setErrors) => {
-    let errors = {}
-    if (!name) {
-        errors = {...errors, name: 'Please, enter your name'}
-    }
-    if (!contacts) {
-        errors = {...errors, contacts: 'Please, enter your contacts'}
-    }
-    if (!message) {
-        errors = {...errors, message: 'Please, enter your message'}
-    }
+const processErrors = (values, setErrors) => {
+    const errors = {}
+    Object.keys(values).forEach((fieldName) => {
+        if (!values[fieldName]) {
+            errors[fieldName] = true
+        }
+    })
     setErrors(errors)
 }
 
-
-export const Contacts = () => {
+export const Contacts = ({
+                             dispatch,
+                             disabled
+                         }) => {
     const [name, setName] = useState('')
     const [contacts, setContacts] = useState('')
     const [message, setMessage] = useState('')
-    const [errors, setErrors] = useState(null)
-
+    const [errors, setErrors] = useState({})
     const nameChangeHandle = e => {
         setName(e.currentTarget.value)
-        if (errors) setErrors(null)
+        if (errors) setErrors({})
     }
     const contactsChangeHandle = e => {
         setContacts(e.currentTarget.value)
-        if (errors) setErrors(null)
+        if (errors) setErrors({})
     }
     const messageChangeHandle = e => {
         setMessage(e.currentTarget.value)
-        if (errors) setErrors(null)
+        if (errors) setErrors({})
     }
 
     const submitHandle = e => {
         e.preventDefault()
         if (!name || !contacts || !message) {
-            processErrors(name, contacts, message, setErrors)
+            processErrors({name, contacts, message}, setErrors)
             return
         }
         sendMessage()
     }
 
-    const sendMessage = () => {
-        const response = postData('http://localhost:3010/send', {name, contacts, message})
+    const sendMessage = async () => {
+        dispatch(setAppStatus('loading'))
+        const {messageStatus} = await postData('http://localhost:3010/send', {name, contacts, message})
+        if (messageStatus === 'OK') {
+            dispatch(setPopUpMessage('Message has been sent'))
+            setName('')
+            setContacts('')
+            setMessage('')
+            return
+        }
+        dispatch(setPopUpMessage('Something goes wrong'))
     }
 
     return (
@@ -62,20 +69,33 @@ export const Contacts = () => {
                 <div className={s.formWrapper}>
                     <form className={s.messageForm} action="" onSubmit={submitHandle}>
                         <div className={s.field}>
-                            <input type="text" placeholder='Your name' value={name} onChange={nameChangeHandle}/>
-                            <span className={s.errorSpan}>{errors && errors.name}</span>
+                            <input type="text"
+                                   placeholder='Your name'
+                                   value={name}
+                                   onChange={nameChangeHandle}
+                                   className={errors.name ? s.error : ''}
+                                   disabled={disabled}
+                            />
                         </div>
                         <div className={s.field}>
-                            <input type="text" placeholder='Your contacts' value={contacts}
-                                   onChange={contactsChangeHandle}/>
-                            <span className={s.errorSpan}>{errors && errors.contacts}</span>
+                            <input type="text"
+                                   placeholder='Your contacts'
+                                   value={contacts}
+                                   onChange={contactsChangeHandle}
+                                   className={errors.contacts ? s.error : ''}
+                                   disabled={disabled}
+                            />
                         </div>
                         <div className={s.field}>
-                            <textarea placeholder='Your message' value={message} onChange={messageChangeHandle}/>
-                            <span className={s.errorSpan}>{errors && errors.message}</span>
+                            <textarea placeholder='Your message'
+                                      value={message}
+                                      onChange={messageChangeHandle}
+                                      className={errors.message ? s.error : ''}
+                                      disabled={disabled}
+                            />
                         </div>
                         <div className={s.btn}>
-                            <AnimatedButton text={'Send message'}/>
+                            <AnimatedButton text={'Send message'} disabled={disabled}/>
                         </div>
                     </form>
                 </div>

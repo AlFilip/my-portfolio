@@ -1,0 +1,49 @@
+@import 'src/assets/styles/variables';
+@import 'src/assets/styles/mixins';
+
+.popUp {
+  position: fixed;
+  transition: 0.3s ease;
+  padding: 0 30px 0 20px;
+  border: 2px solid $secondaryColor;
+  background-color: $bgColor;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  bottom: 150px;
+  left: calc(15% + 50px);
+  @media screen and (max-width: $firstResize) {
+    left: calc(5% + 15px);
+    bottom: 50px;
+  }
+  @media screen and (max-width: $secondResize) {
+    left: calc(15px);
+    bottom: 20px;
+  }
+  .message{
+    @include text($fontWeight: 500, $lineHeight: 40px);
+  }
+  .close {
+    @include text($fontWeight: 500);
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 3px;
+    &:hover{
+      background-color: $darkGray;
+      border-radius: 50%;
+    }
+  }
+}
+
+//width: 70%;
+//@media screen and (max-width: $firstResize) {
+//  width: 90%;
+//}
+//@media screen and (max-width: $secondResize) {
+//  width: 100%;
+//}
